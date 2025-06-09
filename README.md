@@ -1,3 +1,3 @@
 # Splay
 
-macOS app to splay/scatter the open windows.
+**Splay** is a macOS menu bar app to splay/scatter the current open windows.
