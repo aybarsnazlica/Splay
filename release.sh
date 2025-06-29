@@ -7,8 +7,6 @@ VERSION=$(git-cliff --bumped-version)
 VERSION="${VERSION##v}"       # Strip all leading "v"
 VERSION="${VERSION##v}"       # In case there's "vv"
 
-git commit -m "feat: bump project version to $VERSION"
-
 git add CHANGELOG.md
 git commit -m "docs: update changelog for $VERSION"
 
