@@ -14,4 +14,5 @@ All notable changes to this project will be documented in this file.
 - *(xcode)* Add xcode project files
 - Add license
 - Add gitignore
+- *(changelog)* Add changelog build files
 
