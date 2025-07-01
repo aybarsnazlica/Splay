@@ -9,11 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Button("Splay Windows") {
-                WindowManager.splay()
+        ZStack {
+            Color.purple
+            VStack {
+                Button("Splay Windows ✨") {
+                    WindowManager.splay()
+                }
+                .font(.title3)
+                .bold()
+                .padding(.top)
+
+                Button("Quit") {
+                    NSApplication.shared.terminate(nil)
+                }
+                .padding()
+
             }
-            .padding()
         }
         .frame(width: 200, height: 100)
     }
