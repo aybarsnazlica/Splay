@@ -101,38 +101,42 @@ struct AXWindow {
     }
 
     private func getSize() -> CGSize? {
-        var sizeRef: CFTypeRef?
-        if AXUIElementCopyAttributeValue(
-            element,
-            kAXSizeAttribute as CFString,
-            &sizeRef
-        ) == .success,
-            let size = sizeRef,
-            CFGetTypeID(size) == AXValueGetTypeID(),
-            AXValueGetType(size as! AXValue) == .cgSize
-        {
-            var result = CGSize()
-            AXValueGetValue(size as! AXValue, .cgSize, &result)
-            return result
+        var ref: CFTypeRef?
+        guard
+            AXUIElementCopyAttributeValue(
+                element,
+                kAXSizeAttribute as CFString,
+                &ref
+            ) == .success,
+            let axValue = ref,
+            CFGetTypeID(axValue) == AXValueGetTypeID(),
+            AXValueGetType(axValue as! AXValue) == .cgSize
+        else {
+            return nil
         }
-        return nil
+
+        var size = CGSize()
+        AXValueGetValue(axValue as! AXValue, .cgSize, &size)
+        return size
     }
 
     private func getPosition() -> CGPoint? {
-        var posRef: CFTypeRef?
-        if AXUIElementCopyAttributeValue(
-            element,
-            kAXPositionAttribute as CFString,
-            &posRef
-        ) == .success,
-            let pos = posRef,
-            CFGetTypeID(pos) == AXValueGetTypeID(),
-            AXValueGetType(pos as! AXValue) == .cgPoint
-        {
-            var result = CGPoint()
-            AXValueGetValue(pos as! AXValue, .cgPoint, &result)
-            return result
+        var ref: CFTypeRef?
+        guard
+            AXUIElementCopyAttributeValue(
+                element,
+                kAXPositionAttribute as CFString,
+                &ref
+            ) == .success,
+            let axValue = ref,
+            CFGetTypeID(axValue) == AXValueGetTypeID(),
+            AXValueGetType(axValue as! AXValue) == .cgPoint
+        else {
+            return nil
         }
-        return nil
+
+        var point = CGPoint()
+        AXValueGetValue(axValue as! AXValue, .cgPoint, &point)
+        return point
     }
 }
