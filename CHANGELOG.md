@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.0] - 2025-07-11
+
+### 🚀 Features
+
+- *(docc)* Add docc documentation
+- Update gitignore
+- Change directory structure
+- Add docs
+
+### 📚 Documentation
+
+- Update readme
+
 ## [0.3.0] - 2025-07-04
 
 ### 🚀 Features
