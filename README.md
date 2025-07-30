@@ -1,6 +1,6 @@
-# Splay 
-
 ![Splay icon](SplayIcon.png)
+
+# Splay 
 
 Splay is a lightweight macOS utility that randomly redistributes open windows across your screen. It's simple, fun, and
 built for developers and power users who want a quick way to declutter, randomize, or test multi-window behavior with a
