@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.5.0] - 2025-07-31
+
+### 🚀 Features
+
+- Add custom logo
+- Use sf symbol for the status bar icon
+- Add icon to readme
+- Use curved icon
+- Use the curved icon
+
+### 🐛 Bug Fixes
+
+- Make the image size smaller
+- Header
+
+### ⚙️ Miscellaneous Tasks
+
+- Modify contents
+- Remove old icon
+
 ## [0.4.0] - 2025-07-11
 
 ### 🚀 Features
