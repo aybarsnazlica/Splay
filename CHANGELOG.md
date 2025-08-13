@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.0] - 2025-08-13
+
+### 🚀 Features
+
+- Use a smaller size icon for readme
+- Use the app icon for the menu bar
+- Hide dock app icon
+
 ## [0.5.0] - 2025-07-31
 
 ### 🚀 Features
