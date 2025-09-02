@@ -1,23 +1,19 @@
-# Splay
+![Splay icon](Images/banner.svg)
 
-![Splay icon](Images/banner.png)
-
-Splay is a lightweight macOS utility that randomly redistributes open windows across your screen. It's simple, fun, and
-built for developers and power users who want a quick way to declutter, randomize, or test multi-window behavior with a
-single click.
+**Splay** is a lightweight macOS utility that redistributes open windows across the screen in a randomized layout. It is designed for developers and power users who need a fast way to declutter, test multi‑window behavior, or introduce variety into their workspace with a single action.
 
 ---
 
-## 🚀 Features
+## Features
 
-- 🔀 **Splays windows randomly** across your visible display.
-- 🍎 **macOS-native** Swift app using AppKit and Accessibility APIs.
-- 🛠️ **Minimal UI**, menu-bar based.
-- 🧩 Built with Swift + SwiftUI + CoreGraphics.
+- Randomly redistributes windows across the active display.
+- Native macOS application built with Swift, AppKit, and Accessibility APIs.
+- Minimal, menu‑bar based interface.
+- Implemented using Swift, SwiftUI, and CoreGraphics.
 
 ---
 
-## 🧪 Requirements
+## Requirements
 
 - macOS 13+
 - Xcode 15+
@@ -25,9 +21,9 @@ single click.
 
 ---
 
-## 🔒 Permissions
+## Permissions
 
-Splay requires Accessibility permissions to control other windows. macOS will prompt you the first time. Alternatively:
+Splay requires Accessibility permissions in order to control and reposition application windows. macOS will automatically prompt for this on first use. To grant permissions manually:
 
-1. Open System Settings > Privacy & Security > Accessibility
-2. Enable Splay
+1. Open **System Settings** > **Privacy & Security** > **Accessibility**
+2. Enable **Splay**
