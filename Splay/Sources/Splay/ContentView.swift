@@ -22,13 +22,11 @@ struct ContentView: View {
                 Button("Splay Windows ✨") {
                     WindowManager.splay()
                 }
-                .padding(.top)
+                .padding()
 
                 Button("Quit") {
                     NSApplication.shared.terminate(nil)
                 }
-                .padding()
-
             }
         }
         .frame(width: 200, height: 100)
