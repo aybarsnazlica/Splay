@@ -26,7 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem = NSStatusBar.system.statusItem(
             withLength: NSStatusItem.variableLength
         )
-        statusItem?.button?.image = NSImage(named: "StatusBarIcon")
+        statusItem?.button?.image = NSImage(systemSymbolName: "macwindow.on.rectangle", accessibilityDescription: "Splay icon")
         statusItem?.button?.target = self
         statusItem?.button?.action = #selector(togglePopover)
 
