@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.7.0] - 2025-09-02
+
+### 🚀 Features
+
+- *(icon)* Update icons
+- Use a sf symbol for the status bar icon
+- Remove padding
+
+### 🚜 Refactor
+
+- Rename top-level assets folder
+
 ## [0.6.0] - 2025-08-13
 
 ### 🚀 Features
