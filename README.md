@@ -7,7 +7,7 @@
 ## Features
 
 - Randomly redistributes windows across the active display.
-- Native macOS application built with Swift, AppKit, and Accessibility APIs.
+- Native macOS application built with Swift, Cocoa, and Accessibility APIs.
 - Minimal, menu‑bar based interface.
 - Implemented using Swift, SwiftUI, and CoreGraphics.
 
