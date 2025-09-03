@@ -5,7 +5,6 @@
 // See LICENSE for license information.
 //
 
-import EventKit
 import SwiftUI
 
 /// The application delegate for the Splay app.
