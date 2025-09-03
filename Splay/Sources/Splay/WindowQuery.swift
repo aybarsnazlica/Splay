@@ -5,7 +5,6 @@
 // See LICENSE for license information.
 //
 
-
 import Cocoa
 
 /// A utility for querying visible standard windows using Core Graphics and Accessibility APIs.
