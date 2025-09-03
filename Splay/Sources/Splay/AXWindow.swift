@@ -60,7 +60,7 @@ struct AXWindow {
         let origin =
             getPosition() ?? CGPoint(x: screenFrame.midX, y: screenFrame.midY)
 
-        let delta: CGFloat = 60.0
+        let delta: CGFloat = 120.0
         let xRange =
             max(
                 screenFrame.minX,
@@ -77,8 +77,8 @@ struct AXWindow {
             y: CGFloat.random(in: yRange)
         )
 
-        let steps = 60
-        let duration: TimeInterval = 0.5
+        let steps = 360
+        let duration: TimeInterval = 0.3
         let interval = duration / TimeInterval(steps)
         var step = 0
 
@@ -86,10 +86,7 @@ struct AXWindow {
             timer in
             step += 1
             let linearT = CGFloat(step) / CGFloat(steps)
-            let t =
-                linearT < 0.5
-                ? 4 * linearT * linearT * linearT
-                : 1 - pow(-2 * linearT + 2, 3) / 2
+            let t = 0.5 - cos(linearT * .pi) / 2
 
             var interpolated = CGPoint(
                 x: origin.x + (target.x - origin.x) * t,
