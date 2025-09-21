@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.8.0] - 2025-09-21
+
+### 🚀 Features
+
+- Update the icon
+- Add banner
+- Use svg for the banner
+- Make the movement smoother
+- Move windows away from each other
+- Specify app category
+- Update to the recommended changes
+
+### 🐛 Bug Fixes
+
+- Current features
+
+### 🚜 Refactor
+
+- Clean up the readme
+- Remove redundant import
+- Format
+
 ## [0.7.0] - 2025-09-02
 
 ### 🚀 Features
