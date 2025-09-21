@@ -20,8 +20,35 @@ struct WindowManager {
         }
 
         let windows = WindowQuery.getStandardVisibleWindows()
-        for window in windows {
-            AXWindow(window).animateToRandomNearbyPosition()
+        let axWindows = windows.map { AXWindow($0) }
+        guard let screen = NSScreen.main else { return }
+        let frame = screen.visibleFrame
+        let center = CGPoint(x: frame.midX, y: frame.midY)
+
+        for axWin in axWindows {
+            guard let origin = axWin.getPosition(),
+                let size = axWin.getSize()
+            else { continue }
+            let vector = CGVector(
+                dx: origin.x - center.x,
+                dy: origin.y - center.y
+            )
+            let scale: CGFloat = 1.1  // push outward 10%
+            var target = CGPoint(
+                x: center.x + vector.dx * scale,
+                y: center.y + vector.dy * scale
+            )
+            // Clamp to visible frame to prevent moving outside screen
+            let clampedX = max(
+                frame.minX,
+                min(target.x, frame.maxX - size.width)
+            )
+            let clampedY = max(
+                frame.minY,
+                min(target.y, frame.maxY - size.height)
+            )
+            target = CGPoint(x: clampedX, y: clampedY)
+            axWin.animate(to: target)
         }
     }
 }
@@ -39,4 +66,3 @@ struct Accessibility {
         return AXIsProcessTrustedWithOptions(options)
     }
 }
-
