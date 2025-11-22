@@ -9,12 +9,15 @@ import Cocoa
 
 /// A utility for managing and repositioning windows using macOS accessibility APIs.
 struct WindowManager {
-    /// Moves all standard visible windows to random nearby positions on the screen.
-    ///
-    private(set) var scale = 0.0
     
-    /// This method first checks for accessibility permissions. If granted, it retrieves all standard
-    /// visible windows and animates each to a randomly offset position.
+    /// The multiplicative factor applied to vectors from the screen center when splaying windows.
+    private(set) var scale = 0.0
+
+    /// Moves all standard visible windows radially outward from the screen center.
+    ///
+    /// This method first checks for accessibility permissions. If granted, it retrieves all
+    /// standard visible windows and animates each to a new position scaled relative to the
+    /// window's vector from the screen center.
     func splay() {
         guard Accessibility.hasPermission(prompt: true) else {
             print("Accessibility permissions not granted.")
