@@ -39,11 +39,11 @@ struct WindowManager {
                 dy: origin.y - center.y
             )
             
-            let scale: CGFloat = 1.0 + scale
+            let scaleFactor: CGFloat = 1.0 + scale
             
             var target = CGPoint(
-                x: center.x + vector.dx * scale,
-                y: center.y + vector.dy * scale
+                x: center.x + vector.dx * scaleFactor,
+                y: center.y + vector.dy * scaleFactor
             )
             
             // Clamp to visible frame to prevent moving outside screen
