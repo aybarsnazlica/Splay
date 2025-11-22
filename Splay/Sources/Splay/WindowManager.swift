@@ -11,9 +11,11 @@ import Cocoa
 struct WindowManager {
     /// Moves all standard visible windows to random nearby positions on the screen.
     ///
+    private(set) var scale = 0.0
+    
     /// This method first checks for accessibility permissions. If granted, it retrieves all standard
     /// visible windows and animates each to a randomly offset position.
-    static func splay() {
+    func splay() {
         guard Accessibility.hasPermission(prompt: true) else {
             print("Accessibility permissions not granted.")
             return
@@ -33,11 +35,14 @@ struct WindowManager {
                 dx: origin.x - center.x,
                 dy: origin.y - center.y
             )
-            let scale: CGFloat = 1.1  // push outward 10%
+            
+            let scale: CGFloat = 1.0 + scale
+            
             var target = CGPoint(
                 x: center.x + vector.dx * scale,
                 y: center.y + vector.dy * scale
             )
+            
             // Clamp to visible frame to prevent moving outside screen
             let clampedX = max(
                 frame.minX,
@@ -66,3 +71,4 @@ struct Accessibility {
         return AXIsProcessTrustedWithOptions(options)
     }
 }
+
