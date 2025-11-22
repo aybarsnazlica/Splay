@@ -16,19 +16,35 @@ struct ContentView: View {
     ///
     /// Provides a vertical stack containing two buttons: one to invoke window splaying
     /// and another to terminate the application.
+    @State private var scale = 5
+    
     var body: some View {
         ZStack {
             VStack {
-                Button("Splay Windows ✨") {
-                    WindowManager.splay()
+                Stepper(
+                    value: $scale,
+                    in: 0...25
+                    
+                ) {
+                    Text("Scale by: \(scale)%")
+                        .font(.headline)
                 }
-                .padding()
-
+                .padding(.bottom)
+                
+                Button("Splay✨") {
+                    let normalizedScale = Double(scale) / 100
+                    let windowManager = WindowManager(scale: normalizedScale)
+                    windowManager.splay()
+                }
+                .padding(.bottom)
+                
+                Divider()
+                
                 Button("Quit") {
                     NSApplication.shared.terminate(nil)
                 }
             }
         }
-        .frame(width: 200, height: 100)
+        .frame(width: 150, height: 150)
     }
 }
